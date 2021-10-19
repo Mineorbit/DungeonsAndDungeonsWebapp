@@ -7,7 +7,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        fetch("http://localhost:8000/level/all?proto_resp=false")
+        fetch("http://46.232.248.108:8000/level/all?proto_resp=false")
             .then((res) => res.json())
             .then((levels) => {
                 console.log(JSON.stringify(levels, null, 2));
