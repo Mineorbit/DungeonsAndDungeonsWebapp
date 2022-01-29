@@ -1,48 +1,40 @@
-# multi-page-svelte
+# create-svelte
 
-Create multiple svelte-pages with this template. Relies on default template https://github.com/sveltejs/template
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Usage
+## Creating a project
 
-```shell
-npx degit Tom-Siegel/multi-page-svelte
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npm init svelte@next
+
+# create a new project in my-app
+npm init svelte@next my-app
 ```
 
-1. Create as many Page-files as you want (see src/main.js or src/second.js)
-2. Go to rollup-pages.config.js and set the inputs
+> Note: the `@next` is temporary
 
-```javascript
-const inputs = [
-  "main", //string defaults to input: src/[name].js and output: public/build/[name].js
-  {
-    input: "src/second.js",
-    output: { file: "public/build/second.js", name: "second" },
-    css: "public/build/second.css",
-  }, //object for setting more specific values for input and output of roolup configuration
-];
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-3. Set up your html-files by adding the main.js, main.css and global.css
-4. Build the project
+## Building
 
-```shell
+To create a production version of your app:
+
+```bash
 npm run build
 ```
 
-## Testing
+You can preview the production build with `npm run preview`.
 
-```shell
-npm run dev
-```
-
-Or
-
-```shell
-npm run start
-```
-
-Open your browser url: localhost:5000
-
-main.js --> http://localhost:5000/index.html
-
-second.js --> http://localhost:5000/second.html
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment.
